@@ -21,7 +21,7 @@ app.put('/:id', async (req, res) => {
     const id = req.params.id;
     const params = [nombre, apellido, edad, fecha, finish, id];
     let sql = `UPDATE tbl_listado 
-               SET nombre = $1, apellido =$2, edad = $3, fecha_ingreso = $4, finish = $5
+               SET nombre = $1, apellido =$2, edad = $3, fecha = $4, finish = $5
                WHERE id = $6
                RETURNING *`;
     const result = await db.query(sql, params);
